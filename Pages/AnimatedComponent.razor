@@ -1,0 +1,34 @@
+@* Components/AnimatedComponent.razor *@
+@inject IJSRuntime _jsRuntime
+@inject ScrollAnimationService AnimationService
+
+<div @ref="_element" 
+     id="@ElementId" 
+     style="@_style" 
+     class="@Class">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter] public string ElementId { get; set; } = Guid.NewGuid().ToString();
+    [Parameter] public string Class { get; set; } = "";
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    
+    private ElementReference _element;
+    private string _style = "opacity: 0;";
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            AnimationService.RegisterAnimation(ElementId, () => AnimateIn());
+            await _jsRuntime.InvokeVoidAsync("aos.observe", _element);
+        }
+    }
+    
+    private void AnimateIn()
+    {
+        _style = "opacity: 1; transition: all 0.5s ease-out;";
+        StateHasChanged();
+    }
+}
