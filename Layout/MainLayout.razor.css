@@ -1,0 +1,22 @@
+header{
+    position:fixed;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px 10%;
+    background: var(--primary-color);
+    z-index: 10000;
+}
+main{
+    position: relative;
+    display: block;
+    gap:0;
+    padding: 0;
+    margin: 0;
+
+  
+    
+    
+}

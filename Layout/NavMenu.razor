@@ -1,0 +1,37 @@
+﻿<div class=" nav-logo">
+    <a>Port<span class="logo-color">folio</span></a>
+</div>
+<nav class="navlist">
+    <div class="nav-items">
+        <div class="nav-menu @showMenu" >
+            <i class="ri-menu-line"></i>
+        </div>
+        <div >
+            <a class="nav-item" href="" Match="NavLinkMatch.All">
+                Home
+            </a>
+        </div>
+        <div >
+            <NavLink class="nav-item" href="" >
+                Services
+            </NavLink>
+        </div>
+        <div >
+            <NavLink class="nav-item" href="" >
+                About
+            </NavLink>
+        </div>
+        <div >
+            <NavLink class="nav-item" href="">
+                Contact
+            </NavLink>
+        </div>
+        
+    </div>
+    <div class="right-content">
+        <a class="nav-btn">Submit</a>
+    </div>
+</nav>
+@code{
+    private string showMenu {get;set;}="";
+}
