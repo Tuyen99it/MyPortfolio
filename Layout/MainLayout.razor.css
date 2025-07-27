@@ -11,8 +11,10 @@ header{
 }
 main{
     position: relative;
-   
     display: block;
+    gap:0;
+    padding: 0;
+    margin: 0;
 
   
     
