@@ -1,0 +1,5 @@
+name: Deploy-blazor-to-githup-pages
+on:
+  push:
+  
+  
