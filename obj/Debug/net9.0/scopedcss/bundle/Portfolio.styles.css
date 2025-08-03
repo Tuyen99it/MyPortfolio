@@ -510,6 +510,7 @@ h2[b-v9rf77xbvc] {
      .hero-text[b-v9rf77xbvc]{
         width: 350px;
         height: auto;
+        gap:16px;
      }
     .hero-container[b-v9rf77xbvc] {
         flex-direction: column;

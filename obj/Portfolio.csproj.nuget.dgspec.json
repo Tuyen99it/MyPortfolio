@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nguye\\Documents\\MyPortfolio\\Portfolio.csproj": {}
+    "C:\\Users\\F&B\\Cshap\\MyPortfolio\\Portfolio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nguye\\Documents\\MyPortfolio\\Portfolio.csproj": {
+    "C:\\Users\\F&B\\Cshap\\MyPortfolio\\Portfolio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\Documents\\MyPortfolio\\Portfolio.csproj",
+        "projectUniqueName": "C:\\Users\\F&B\\Cshap\\MyPortfolio\\Portfolio.csproj",
         "projectName": "Portfolio",
-        "projectPath": "C:\\Users\\nguye\\Documents\\MyPortfolio\\Portfolio.csproj",
-        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nguye\\Documents\\MyPortfolio\\obj\\",
+        "projectPath": "C:\\Users\\F&B\\Cshap\\MyPortfolio\\Portfolio.csproj",
+        "packagesPath": "C:\\Users\\F&B\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\F&B\\Cshap\\MyPortfolio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\F&B\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -56,13 +56,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.6, )",
+              "version": "[9.0.5, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.6, )",
+              "version": "[9.0.5, )",
               "autoReferenced": true
             }
           },
@@ -80,7 +80,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[9.0.6, 9.0.6]"
+              "version": "[9.0.5, 9.0.5]"
             }
           ],
           "frameworkReferences": {
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

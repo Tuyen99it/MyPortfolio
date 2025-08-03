@@ -385,6 +385,7 @@ h2 {
      .hero-text{
         width: 350px;
         height: auto;
+        gap:16px;
      }
     .hero-container {
         flex-direction: column;
