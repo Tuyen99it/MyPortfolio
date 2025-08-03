@@ -1,0 +1,194 @@
+<section class="services">
+    <div class="container">
+        <h2 style="color:white">MY SERVICES</h2>
+
+        <div class="card-show">
+            <div class="btn btn-revert"><i class='bxr  bx-arrow-left-stroke-circle  @BtnDisplays[0]'></i> </div>
+            <div class="card-list ">
+                @foreach (var service in Services)
+                {
+                    <div class="card-item @service.Display">
+                        <div class="card-logo"><i class=@service.Logo></i> </div>
+                        <h2 class="card-title">@service.Title</h2>
+                        <p class="card-content">@service.Content</p>
+                        <a class="card-button">@service.Button</a>
+                    </div>
+                }
+            </div>
+
+            <div class="btn btn-forward "><i class='bxr  bx-arrow-right-stroke-circle @BtnDisplays[1]'></i> </div>
+
+        </div>
+        <div class="paging-container">
+            @for (int i = 0; i < ScrollItemDisplays.Count(); i++)
+            {
+                <div class="paging paging-circle  @ScrollItemDisplays[i] @ItemStatuses[i]"></div>
+            }
+
+        </div>
+    </div>
+</section>
+@code {
+    public class CardObject
+    {
+        public int No { get; set; }
+        public string Logo { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string Button { get; set; }
+        public string Display { get; set; } = "show-card";
+    }
+    // output
+    public List<CardObject> Services { get; set; } = new List<CardObject>();
+    public string[] BtnDisplays { get; set; } = new string[2] { "hide", "hide" };
+    public string[] ItemStatuses { get; set; } = new string[6] { "", "", "", "", "", "" };
+    public string[] ScrollItemDisplays { get; set; } = new string[6] ;
+    public int CurrentPage { get; set; }
+
+    protected override void OnInitialized()
+    {
+        InitialServices();
+        ShowItemsInitial();
+        CurrentPage=1;
+        ItemsDisplayForwardControl(CurrentPage);
+    }
+    private void InitialServices()
+    {
+        Services = new List<CardObject>()
+{
+new CardObject(){
+No=1,
+Logo="bxr bx-group",
+Title="Product",
+Content="We provide some website templates. Please refers to them!",
+Button="Contact"
+},
+new CardObject(){
+No=2,
+Logo="bxr bx-group",
+Title="Product",
+Content="We provide some website templates. Please refers to them!",
+Button="Contact"
+},
+new CardObject(){
+No=3,
+Logo="bxr bx-group",
+Title="Product",
+Content="We provide some website templates. Please refers to them!",
+Button="Contact"
+},
+new CardObject(){
+No=3,
+Logo="bxr bx-group",
+Title="Product",
+Content="We provide some website templates. Please refers to them!",
+Button="Contact"
+},
+new CardObject(){
+No=3,
+Logo="bxr bx-group",
+Title="Product",
+Content="We provide some website templates. Please refers to them!",
+Button="Contact"
+}
+,
+new CardObject(){
+No=3,
+Logo="bxr bx-group",
+Title="Product",
+Content="We provide some website templates. Please refers to them!",
+Button="Contact"
+}
+,
+new CardObject(){
+No=3,
+Logo="bxr bx-group",
+Title="Product",
+Content="We provide some website templates. Please refers to them!",
+Button="Contact"
+}
+};
+    }
+    private void ShowItemsInitial()
+    {
+        ScrollItemDisplays=new string[]{"hide","hide","hide","hide","hide","hide"};
+        var servicesCount = Services.Count();
+        if (servicesCount > 6)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                ScrollItemDisplays[i] = "show";
+            }
+            Console.WriteLine("-->Create 6 scroll items");
+            return;
+        }
+        for (int i = 0; i < servicesCount; i++)
+        {
+            ScrollItemDisplays[i] = "show";
+        }
+        Console.WriteLine($"-->Create {servicesCount} scroll items");
+        Console.WriteLine($"-->Create { ScrollItemDisplays[4]} scroll items");
+    }
+    private void ItemsDisplayForwardControl(int currentCard)
+    {
+        if (currentCard >= Services.Count())
+        {
+            // reset all status of scroll Items
+            ItemStatuses = new string[6];
+            //set the first item
+            ItemStatuses[0] = "small";
+            //set the last item
+            ItemStatuses[ItemStatuses.Length - 1] = "light";
+            return;
+        }
+        if (currentCard > 6)
+        {
+            // reset all status of scroll Items
+            ItemStatuses = new string[6];
+            //set the first item
+            ItemStatuses[0] = "small";
+            //set the last item
+            ItemStatuses[ItemStatuses.Length - 1] = "small";
+            ItemStatuses[ItemStatuses.Length - 2] = "light";
+            ItemStatuses[ItemStatuses.Length - 3] = "light";
+            ItemStatuses[ItemStatuses.Length - 4] = "light";
+            return;
+        }
+        ItemStatuses = new string[6];
+        ItemStatuses[currentCard] = "light";
+
+
+    }
+    private void ItemsDisplayRevertControl(int currentCard)
+    {
+        if (currentCard >= Services.Count() - 6)
+        {
+            // reset all status of scroll Items
+            ItemStatuses = new string[6];
+            //set the first item
+            var itemIndex = (currentCard - 1) % 6;
+            ItemStatuses[itemIndex] = "light";
+            return;
+        }
+        if (currentCard > 6)
+        {
+            // reset all status of scroll Items
+            ItemStatuses = new string[6];
+            //set the first item
+            ItemStatuses[0] = "small";
+            //set the last item
+            ItemStatuses[ItemStatuses.Length - 1] = "small";
+            ItemStatuses[1] = "light";
+            ItemStatuses[2] = "light";
+            ItemStatuses[3] = "light";
+            return;
+        }
+        ItemStatuses = new string[6];
+        ItemStatuses[0] = "light";
+        ItemStatuses[ItemStatuses.Length - 1] = "small";
+
+
+    }
+
+
+}
