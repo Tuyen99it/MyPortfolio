@@ -99,24 +99,25 @@ p {
 }
 @media (max-width:440px){
      h1 {
-        font-size: var(--font-h3);
-    }
-
-    h2 {
         font-size: var(--font-h4);
     }
 
-    h3 {
+    h2 {
         font-size: var(--font-h5);
     }
 
-    h4 {
+    h3 {
         font-size: var(--font-h6);
     }
 
-    h5 {
+    h4 {
         font-size: var(--font-content);
     }
+
+    h5, h6 {
+        font-size: var(--font-caption);
+    }
+    
 
   
 }
