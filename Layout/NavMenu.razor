@@ -1,37 +1,49 @@
-﻿<div class=" nav-logo">
+﻿<div class=" nav-logo @(isVisible ? "hidden" : "visible")">
     <a><img src="@Assets["images/logo.png"]" style="height:44px"></a>
 </div>
-<nav class="navlist">
-    <div class="nav-items">
-        <div class="nav-menu @showMenu" >
-            <i class="ri-menu-line"></i>
-        </div>
-        <div >
-            <a class="nav-item" href="" Match="NavLinkMatch.All">
-                Home
-            </a>
-        </div>
-        <div >
-            <NavLink class="nav-item" href="" >
-                Services
-            </NavLink>
-        </div>
-        <div >
-            <NavLink class="nav-item" href="" >
-                About
-            </NavLink>
-        </div>
-        <div >
-            <NavLink class="nav-item" href="">
-                Contact
-            </NavLink>
-        </div>
-        
+
+<nav class="navlist ">
+    <div class="nav-menu  " @onclick="ToggleMenu">
+        <i class="@(!isVisible ? "ri-menu-line" : "bxr  bx-x")"></i>
     </div>
-    <div class="right-content">
-        <a class="nav-btn">Submit</a>
+
+    <div class="nav-items @(isVisible ? "visible" : "hidden")">
+        <div class="nav-content">
+            <div>
+                <NavLink class="nav-item " href="" Match="NavLinkMatch.All">
+                    Home
+                </NavLink>
+            </div>
+            <div>
+                <NavLink class="nav-item" href="">
+                    Services
+                </NavLink>
+            </div>
+            <div>
+                <NavLink class="nav-item" href="">
+                    About
+                </NavLink>
+            </div>
+            <div>
+                <NavLink class="nav-item" href="">
+                    Contact
+                </NavLink>
+            </div>
+        </div>
+        <div class="right-content">
+            <a class="nav-btn">Submit</a>
+        </div>
+
     </div>
+
 </nav>
-@code{
-    private string showMenu {get;set;}="";
+
+@code {
+    private bool isVisible { get; set; } = false;
+
+    public void ToggleMenu()
+    {
+        isVisible = !isVisible; ;
+    }
+
 }

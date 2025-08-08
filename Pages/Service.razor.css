@@ -1,16 +1,15 @@
 .services {
     position: relative;
-
     width: 100vw;
-    min-height: 100vh;
+    height:auto;
     padding: 0;
     margin: 0;
-    height: 100vh;
+
     outline: none;
     display: flex;
     flex-direction: row;
-    align-items: start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     padding-top:5%;
 
 }
@@ -29,20 +28,16 @@
     justify-content: start;
     width: 100%;
     height: 100%;
-    gap:32px;
-
- 
-
+    padding:16px auto;
 
 }
 
 .services h2 {
-    margin: 64px auto;
+    margin: 32px auto;
 }
 
 .card-show, .card-list {
     width: 100%;
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -123,7 +118,7 @@
     flex-direction: row;
     width: 100px;
     height: 10px;
-
+    margin: 16px auto;
     justify-content: space-around;
     align-items: center;
     /* border:1px solid red; */
@@ -194,25 +189,28 @@
 }
 @media (max-width:440px) {
 
-    .service-container{
+
+    .container{
         height:auto;
+        align-items: center;
+        justify-content: start;
     }
     .services{
         height: auto;
-        overflow: hidden;
         width: 100vw;
-        height: 65vh;
+
        
     }
     .card-list{
       flex-direction: row;
       overflow-x: auto;
       flex-wrap: nowrap;
-      gap:32px;
-     
       justify-content: start;
-      align-items: flex-start;
+      align-items: center;
       align-self: self-start;
+      gap: 32px;
+      padding-left: 20px;
+      padding-right: 20px;
 
     
     }

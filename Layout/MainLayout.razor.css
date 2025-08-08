@@ -4,13 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items:    center;
-    display: flex  ;
     width: 100vw;
     height: auto;
     min-height: 100vh;
 }
 header{
-    position:fixed;
+    position:sticky;
+    top:0;
     width:100vw;
     display:flex;
     flex-direction: row;
@@ -22,6 +22,7 @@ header{
     z-index: 10000;
 }
 main{
+    position: relative;
     margin: 0;
     padding: 0;
     display: flex;
@@ -29,4 +30,18 @@ main{
     align-items:    center;
     width: 100%;
     height: auto;
+}
+@media (max-width:440px) {
+
+    header{
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-between;
+        height: auto;
+        gap:32px;
+    }
+ 
+  
+
 }

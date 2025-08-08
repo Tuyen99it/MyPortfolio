@@ -1,6 +1,5 @@
 .hero[b-v9rf77xbvc],
-.info[b-v9rf77xbvc],
-.service[b-v9rf77xbvc] {
+.info[b-v9rf77xbvc] {
     position: relative;
     background: var(--bg-hero-color);
     width: 100%;
@@ -369,10 +368,12 @@ h2[b-v9rf77xbvc] {
 @media (max-width:440px) {
 
     .hero[b-v9rf77xbvc] , .info[b-v9rf77xbvc]{
+        display: flex;
         margin: 0;
         padding: 0;
         align-items: center;
-        justify-content: center;
+        justify-content:center;
+        height: auto;
 
     }
 
@@ -388,10 +389,13 @@ h2[b-v9rf77xbvc] {
         gap:16px;
      }
     .hero-container[b-v9rf77xbvc] {
+        display: flex;
         flex-direction: column;
-        width: auto;
+      
+        flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
+     
         gap: 16px;
         margin: 16px;
         padding: 0;
@@ -401,6 +405,7 @@ h2[b-v9rf77xbvc] {
     }
     .revert[b-v9rf77xbvc]{
         flex-direction: column-reverse;
+        flex-wrap: wrap;
     }
     .service-container[b-v9rf77xbvc]{
         height:auto;

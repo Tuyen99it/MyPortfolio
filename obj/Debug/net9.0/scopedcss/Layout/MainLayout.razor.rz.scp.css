@@ -4,13 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items:    center;
-    display: flex  ;
     width: 100vw;
     height: auto;
     min-height: 100vh;
 }
 header[b-xn2l5aia1e]{
-    position:fixed;
+    position:sticky;
+    top:0;
     width:100vw;
     display:flex;
     flex-direction: row;
@@ -22,6 +22,7 @@ header[b-xn2l5aia1e]{
     z-index: 10000;
 }
 main[b-xn2l5aia1e]{
+    position: relative;
     margin: 0;
     padding: 0;
     display: flex;
@@ -29,4 +30,18 @@ main[b-xn2l5aia1e]{
     align-items:    center;
     width: 100%;
     height: auto;
+}
+@media (max-width:440px) {
+
+    header[b-xn2l5aia1e]{
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-between;
+        height: auto;
+        gap:32px;
+    }
+ 
+  
+
 }

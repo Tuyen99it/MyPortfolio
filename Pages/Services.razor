@@ -1,2 +1,204 @@
-﻿@page "/services"
+@inject IJSRuntime _jsRuntime
+@implements IAsyncDisposable
+<section class="services" @ref="servicesSection">
+    <div class="container">
+        <h2 class="service-title">MY SERVICES</h2>
+        <div class="card-show">
+            <button class="nav-btn btn-revert" @onclick="NavigateBack" aria-label="Previous Service"
+                title="Previous Services">
+                <i class="bxr bxr-arrow-left-stroke-circle @(CurrentPage > 1 ? "show" : "hide")"></i>
+            </button>
+            <div class="card-list" @ref="cardList">
+                @foreach (var service in ServiceList)
+                {
+                    <div class="card-item @service.Display" @ref="@cardRefs[service.Id]" data-card-id="@service.Id">
+                        <div class="card-logo"><i class="@service.Logo"></i></div>
+                        <h3 class="card-title">@service.Title</h3>
+                        <p class="card-content">@service.Content</p>
+                        <a class="card-button">@service.Button</a>
+                    </div>
+                }
+            </div>
+            <button class="nav-btn btn-forward" @onclick="NavigateForward" aria-label="Next service"
+                title="Next service">
+                <i class='bxr bx-arrow-right-stroke-circle @(CurrentPage < ServiceList.Count ? "show" : "hide")'></i>
+            </button>
+        </div>
+        <div class="paging-container">
+            @foreach (var indicator in PagingIndicators)
+            {
+                <button class="paging paging-circle @indicator.Visibility @indicator.Status"
+                    @onclick="() => GoToPage(indicator.PageNumber)" aria-label="Go to service @indicator.PageNumber"
+                    title="Go to service @indicator.PageNumber">
+                </button>
+            }
+        </div>
+    </div>
+</section>
+@code {
+    // ========== MODELS ==========
+    public class CardItem
+    {
+        public int Id { get; set; }
+        public string Logo { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
+        public string Content { get; set; } = string.Empty;
+        public string Button { get; set; } = string.Empty;
+        public string Display { get; set; } = "show-card";
+    }
 
+    public class PagingIndicator
+    {
+        public int PageNumber { get; set; }
+        public string Visibility { get; set; } = "hide";
+        public string Status { get; set; } = string.Empty;
+    }
+    // ========== PROPERTIES ==========
+    public List<CardItem> ServiceList { get; private set; } = new();
+    public List<PagingIndicator> PagingIndicators { get; private set; } = new();
+    public int CurrentPage { get; private set; } = 1;
+    public bool IsMobileView { get; private set; }
+
+    //=========== Element Reference=============
+    private ElementReference servicesSection;
+    private ElementReference cardList;
+    private Dictionary<int, ElementReference> cardRefs = new()
+    {
+        { 1, default },
+        { 2, default },
+        { 3, default }
+    };
+    private DotNetObjectReference<Services>? dotnetHelper;
+    private IJSObjectReference? jsModule;
+    // ========== LIFECYCLE METHODS ==========
+    protected override void OnInitialized()
+    {
+        InitializeServices();
+        InitializePagingIndicators();
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            dotnetHelper = DotNetObjectReference.Create(this);
+            jsModule = await _jsRuntime.InvokeAsync<IJSObjectReference>(
+            "import", "./js/carouselInterop.js");
+
+            await jsModule.InvokeVoidAsync("initializeCarousel",
+            dotnetHelper,
+            cardList,
+            servicesSection);
+        }
+    }
+    public async ValueTask DisposeAsync()
+    {
+        if (jsModule is not null)
+        {
+            await jsModule.InvokeVoidAsync("disposeCarousel");
+            await jsModule.DisposeAsync();
+        }
+        dotnetHelper?.Dispose();
+    }
+    // ========== INITIALIZATION METHODS ==========
+    private void InitializeServices()
+    {
+        ServiceList = new List<CardItem>
+{
+new() {
+Id = 1,
+Logo = "bxr bx-group",
+Title = "Product",
+Content = "We provide some website templates. Please refers to them!",
+Button = "Contact"
+},
+new() {
+Id = 2,
+Logo = "bxr bx-group",
+Title = "Product",
+Content = "We provide some website templates. Please refers to them!",
+Button = "Contact"
+},
+new() {
+Id = 3,
+Logo = "bxr bx-group",
+Title = "Product",
+Content = "We provide some website templates. Please refers to them!",
+Button = "Contact"
+}
+};
+    }
+    private void InitializePagingIndicators()
+    {
+        PagingIndicators = Enumerable.Range(1, Math.Min(6, ServiceList.Count))
+        .Select(i => new PagingIndicator
+        {
+            PageNumber = i,
+            Visibility = "show"
+        }).ToList();
+
+        UpdatePagingIndicators();
+    }
+    private void UpdatePagingIndicators()
+    {
+        foreach (var indicator in PagingIndicators)
+        {
+            indicator.Status = indicator.PageNumber switch
+            {
+                _ when indicator.PageNumber == CurrentPage => "active",
+                _ when indicator.PageNumber == CurrentPage - 1 => "previous",
+                _ when indicator.PageNumber == CurrentPage + 1 => "next",
+                _ => string.Empty
+            };
+        }
+    }
+    // ========== NAVIGATION METHODS ==========
+    private async Task NavigateForward()
+    {
+        if (CurrentPage < ServiceList.Count)
+        {
+            CurrentPage++;
+            await UpdateDisplay();
+        }
+    }
+    private async Task GoToPage(int page)
+    {
+        if (page >= 1 && page <= ServiceList.Count)
+        {
+            CurrentPage = page;
+            await UpdateDisplay();
+        }
+    }
+     private async Task NavigateBack()
+    {
+        if (CurrentPage > 1)
+        {
+            CurrentPage--;
+            await UpdateDisplay();
+        }
+    }
+    private async Task UpdateDisplay()
+    {
+        UpdatePagingIndicators();
+
+        if (cardRefs.TryGetValue(CurrentPage, out var cardRef))
+        {
+            await jsModule!.InvokeVoidAsync("scrollToElement", cardRef);
+        }
+    }
+    // ========== JS INTEROP METHODS ==========
+    [JSInvokable]
+    public async Task OnCardScrolled(int cardId)
+    {
+        CurrentPage = cardId;
+        UpdatePagingIndicators();
+        StateHasChanged();
+    }
+     [JSInvokable]
+    public void OnMobileDetected(bool isMobile)
+    {
+        IsMobileView = isMobile;
+        StateHasChanged();
+    }
+
+
+}

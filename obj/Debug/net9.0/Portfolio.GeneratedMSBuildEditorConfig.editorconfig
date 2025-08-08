@@ -32,8 +32,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5pbWF0ZWRDb21wb25lbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/F&B/Cshap/MyPortfolio/Pages/Services.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXMucmF6b3I=
+[C:/Users/F&B/Cshap/MyPortfolio/Pages/CardServiceItem.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZFNlcnZpY2VJdGVtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/F&B/Cshap/MyPortfolio/_Imports.razor]
@@ -59,3 +59,7 @@ build_metadata.AdditionalFiles.CssScope = b-v9rf77xbvc
 [C:/Users/F&B/Cshap/MyPortfolio/Pages/Service.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-w7jlt36ug6
+
+[C:/Users/F&B/Cshap/MyPortfolio/Pages/Services.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-1yb1bxjv9a
