@@ -199,8 +199,6 @@ C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtim
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
-C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\Portfolio.gyx61du065.wasm
-C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\Portfolio.05ineqbpba.pdb
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\blazor.webassembly.js.gz
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.n7we7nbch1.wasm.gz
@@ -403,8 +401,6 @@ C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtim
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat.gz
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
-C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\Portfolio.gyx61du065.wasm.gz
-C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\Portfolio.05ineqbpba.pdb.gz
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json.gz
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\Portfolio.staticwebassets.runtime.json
 C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\Portfolio.staticwebassets.endpoints.json
@@ -870,8 +866,6 @@ C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\1lm7x5n9bv-iag0ou56lh
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\4rr53wqq7j-pxmi6q3hhv.gz
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\ecf09jx3ld-ea3hj4s68k.gz
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\rbff2lqdy9-md9yvkcqlf.gz
-C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\pfpd0scoqt-jqjni7jpo2.gz
-C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\vj51ndhrga-jqjni7jpo2.gz
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\eeq1gda8yq-n7we7nbch1.gz
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\b9939rz8dt-waskkzx0nn.gz
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\yrwsr69ahs-nkegowssc4.gz
@@ -1072,9 +1066,6 @@ C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\84hexegzmz-sw8h8rjm4u
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\gfp5lr8eg2-tjcz0u77k5.gz
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\oc8e2sy04m-tptq2av103.gz
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\v7fmk22nqa-lfu7j35m59.gz
-C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\hrigvdkto3-gyx61du065.gz
-C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\i0zbla0v0v-05ineqbpba.gz
-C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\n4srf7eo0m-tg7be55u66.gz
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\staticwebassets.development.json
@@ -1084,3 +1075,12 @@ C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\Portfolio.dll
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\refint\Portfolio.dll
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\Portfolio.pdb
 C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\ref\Portfolio.dll
+C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\Portfolio.xdyxayx0fa.wasm
+C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\Portfolio.ktrpx2xybq.pdb
+C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\Portfolio.xdyxayx0fa.wasm.gz
+C:\Users\F&B\Cshap\MyPortfolio\bin\Debug\net9.0\wwwroot\_framework\Portfolio.ktrpx2xybq.pdb.gz
+C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\pfpd0scoqt-77tue01t71.gz
+C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\vj51ndhrga-77tue01t71.gz
+C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\hrigvdkto3-xdyxayx0fa.gz
+C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\i0zbla0v0v-ktrpx2xybq.gz
+C:\Users\F&B\Cshap\MyPortfolio\obj\Debug\net9.0\compressed\n4srf7eo0m-9fs5odujfh.gz

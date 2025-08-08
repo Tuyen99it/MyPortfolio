@@ -6,7 +6,7 @@
         <div class="card-show">
             <button class="nav-btn btn-revert" @onclick="NavigateBack" aria-label="Previous Service"
                 title="Previous Services">
-                <i class="bxr bxr-arrow-left-stroke-circle @(CurrentPage > 1 ? "show" : "hide")"></i>
+                <i class="bxr bx-arrow-left-stroke-circle @(CurrentPage > 1 ? "show" : "hide")"></i>
             </button>
             <div class="card-list" @ref="cardList">
                 @foreach (var service in ServiceList)

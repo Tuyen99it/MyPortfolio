@@ -52,11 +52,13 @@
 
     .navlist[b-r1r623j3hl]{
         display:flex;
+        width: 100vw;
         flex-direction: column;
         align-items: end;
 
     }
   .nav-content[b-r1r623j3hl], .nav-items[b-r1r623j3hl]{
+    width: 100%;
     flex-direction:column;
     justify-content: space-between;
     align-items: start;

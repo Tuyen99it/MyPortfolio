@@ -94,6 +94,7 @@ main[b-xn2l5aia1e]{
         align-items: center;
         justify-content: space-between;
         height: auto;
+        width: 100vw;
         gap:32px;
     }
  
@@ -155,11 +156,13 @@ main[b-xn2l5aia1e]{
 
     .navlist[b-r1r623j3hl]{
         display:flex;
+        width: 100vw;
         flex-direction: column;
         align-items: end;
 
     }
   .nav-content[b-r1r623j3hl], .nav-items[b-r1r623j3hl]{
+    width: 100%;
     flex-direction:column;
     justify-content: space-between;
     align-items: start;
@@ -1049,6 +1052,7 @@ h2[b-v9rf77xbvc] {
 }
 
 .show[b-1yb1bxjv9a] {
+    
     display: block !important;
     opacity: 1 !important;
 }

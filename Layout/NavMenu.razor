@@ -2,7 +2,7 @@
     <a><img src="@Assets["images/logo.png"]" style="height:44px"></a>
 </div>
 
-<nav class="navlist ">
+<nav class="navlist  @(!isVisible ?"align-right":"align-center")">
     <div class="nav-menu  " @onclick="ToggleMenu">
         <i class="@(!isVisible ? "ri-menu-line" : "bxr  bx-x")"></i>
     </div>

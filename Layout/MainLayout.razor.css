@@ -39,6 +39,7 @@ main{
         align-items: center;
         justify-content: space-between;
         height: auto;
+        width: 100vw;
         gap:32px;
     }
  
