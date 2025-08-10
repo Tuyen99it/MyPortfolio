@@ -198,6 +198,137 @@ main[b-xn2l5aia1e]{
    }
 
 }
+/* /Pages/Contact.razor.rz.scp.css */
+.contact[b-wxj0ji1blt] {
+   
+    position: relative;
+    width: 100vw;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 0 32px;
+    margin: 0;
+     padding-top: 86px;
+    gap:32px;
+    background: var(--bg-services-color);
+
+}
+
+.header-container[b-wxj0ji1blt],.container[b-wxj0ji1blt] {
+    max-width: 900px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+   
+}
+h2[b-wxj0ji1blt]{
+    color:var(--primary-color);
+}
+h3[b-wxj0ji1blt]{
+    color: var(--secondary-color);
+}
+hr[b-wxj0ji1blt]{
+    border-color: red;
+    border: 2px;
+}
+.container[b-wxj0ji1blt]{
+    border: 20px solid rgb(153, 153, 153);
+    background-color: rgb(191, 191, 191);
+ 
+    border-radius: 60px;
+    height: auto;
+    gap:32px;
+    padding: 16px 32px;
+    box-shadow: 10px 10px 10px rgb(138, 137, 137);
+}
+h3[b-wxj0ji1blt]{
+    padding:0;
+    margin: 0;
+}
+.contact-form[b-wxj0ji1blt]{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap:16px;
+}
+hr[b-wxj0ji1blt]{
+    height: 1px;
+    background-color: rgb(96, 96, 91);
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset[b-wxj0ji1blt],legend[b-wxj0ji1blt]{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+fieldset[b-wxj0ji1blt]{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+.contact-btn[b-wxj0ji1blt]{
+    width: 100%;
+    display: flex;
+    height:auto;
+    gap: 8px;
+    background-color: rgb(194, 202, 209);
+    border-radius: 8px;
+    padding:8px 8px;
+    /* border: 1px solid red; */
+}
+.btn-large[b-wxj0ji1blt]{
+    width: 100%;
+}
+.contact-btn:hover[b-wxj0ji1blt]{
+   transform: scale(1.02);
+   transition: all 0.5 ease;
+}
+a[b-wxj0ji1blt]{
+    text-decoration: none;
+    border:none;
+}
+.content div[b-wxj0ji1blt]{
+    color:black;
+    text-decoration: none;
+    width:100%;
+    padding: 0;
+    margin: 0;
+    border-color: none;
+}
+.contact-btn i[b-wxj0ji1blt]{
+    font-size: 32px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgb(143, 156, 156);
+    width: 40px;
+    border:none;
+}
+textarea[b-wxj0ji1blt],input[b-wxj0ji1blt]{
+    background-color:rgb(229, 229, 231);
+}
+textarea:hover[b-wxj0ji1blt],input:hover[b-wxj0ji1blt]{
+    border-color: var(--primary-color);
+}
+@media (max-width:440px) {
+    .header-container[b-wxj0ji1blt]{
+        padding:0 16px;
+    }
+
+    
+
+
+}
 /* /Pages/Home.razor.rz.scp.css */
 .hero[b-v9rf77xbvc],
 .info[b-v9rf77xbvc] {
