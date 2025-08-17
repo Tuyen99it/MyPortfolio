@@ -251,7 +251,7 @@ h3[b-6bjyog6xes]{
     padding:0;
     margin: 0;
 }
-.contact-form[b-6bjyog6xes]{
+.container .contact-form[b-6bjyog6xes]{
     display: flex;
     flex-direction: column;
     align-items: start;
