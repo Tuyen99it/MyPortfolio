@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZFNlcnZpY2VJdGVtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nguye/Documents/Portfolio/MyPortfolio/Pages/Test.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nguye/Documents/Portfolio/MyPortfolio/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -67,3 +71,7 @@ build_metadata.AdditionalFiles.CssScope = b-w7jlt36ug6
 [C:/Users/nguye/Documents/Portfolio/MyPortfolio/Pages/Services.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-1yb1bxjv9a
+
+[C:/Users/nguye/Documents/Portfolio/MyPortfolio/Pages/Skill.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2tpbGwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-gvdftbwkrj

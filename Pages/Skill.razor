@@ -1,0 +1,87 @@
+@page "/skill"
+@using System.Text.RegularExpressions
+
+<div class="container">
+    <div class=" row row-1">
+        @foreach( var icon in IconsRow1){
+            <span class="@icon.Class">@icon.Name</span>
+        }
+    </div>
+</div>
+@code {
+    public class Icon
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Class { get; set; }
+
+    }
+    public Queue<Icon> IconsBase { get; set; }=new();
+    public Queue<Icon> IconsRow1 { get; set; }=new();
+    public Queue<Icon> IconsRow2 { get; set; }=new();
+    public TimeSpan timer { get; set; }=new();
+    protected override void OnInitialized()
+    {
+        IconsInitialized();
+
+    }
+    @* protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            timer = TimeSpan.FromSeconds(1);
+            while (true)
+            {
+                Task.Delay(timer);
+                UpdateIconForward();
+                UpdateIconRevert();
+                StateHasChanged();
+            }
+        }
+    } *@
+    private void UpdateIconForward()
+    {
+        var icon = IconsRow1.Dequeue();
+        IconsRow1.Enqueue(icon);
+
+    }
+    private void UpdateIconRevert()
+    {
+        var icon = IconsRow2.Dequeue();
+        IconsRow2.Enqueue(icon);
+    }
+
+    private void IconsInitialized()
+    {
+        for (int i = 0; i <= 10; i++)
+        {
+            IconsBase.Enqueue(
+            new Icon
+            {
+                ID = i,
+                Name = i.ToString(),
+                Class = "icon"
+            });
+        }
+        IconsRow1 = IconsBase;
+        IconsRow2 = RevertQueue(IconsBase);
+        Console.WriteLine("Initialized IconBase and IconsRow1, IconRow2 successfull");
+    }
+    private Queue<Icon> RevertQueue(Queue<Icon> icons)
+    {
+        //using stack to revert queue
+        var stack = new Stack<Icon>();
+        var queueTemp = new Queue<Icon>();
+        for (int i = 0; i < icons.Count; i++)
+        {
+            stack.Push(icons.Dequeue());
+        }
+        // push to queue
+        for (int j = 0; j < stack.Count; j++)
+        {
+            queueTemp.Enqueue(stack.Pop());
+        }
+        Console.WriteLine("Revert queue successfull");
+        return queueTemp;
+    }
+}

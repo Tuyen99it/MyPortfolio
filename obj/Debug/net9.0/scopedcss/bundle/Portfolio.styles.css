@@ -1286,3 +1286,39 @@ h2[b-v9rf77xbvc] {
         font-size: 32px;
     }
 }
+/* /Pages/Skill.razor.rz.scp.css */
+.container[b-gvdftbwkrj] {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.row[b-gvdftbwkrj] {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    justify-content: end;
+    padding: 0 50px;
+}
+
+.icon[b-gvdftbwkrj] {
+    position: relative;
+    background-color: red;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px; 
+    animation: increase-port-b-gvdftbwkrj 20s linear infinite; 
+
+
+}
+
+@keyframes increase-port-b-gvdftbwkrj {
+    0%{
+
+    }
+    100%{
+        transform: translateX(75vw);
+    }
+}

@@ -1,0 +1,35 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    justify-content: end;
+    padding: 0 50px;
+}
+
+.icon {
+    position: relative;
+    background-color: red;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px; 
+    animation: increase-port 20s linear infinite; 
+
+
+}
+
+@keyframes increase-port {
+    0%{
+
+    }
+    100%{
+        transform: translateX(75vw);
+    }
+}

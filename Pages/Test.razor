@@ -1,0 +1,257 @@
+@page "/auto-execute"
+@using System.Timers
+@implements IDisposable
+
+<h3>Component Tự Động Thực Thi Sau 2 Giây</h3>
+
+<div class="container">
+    <div class="status-box @statusClass">
+        <i class="icon">@icon</i>
+        <span class="status-text">@statusMessage</span>
+    </div>
+
+    <div class="countdown">
+        <div class="countdown-circle">
+            <span class="countdown-text">@countdown</span>
+        </div>
+        <p>Giây trước khi thực thi</p>
+    </div>
+
+    <div class="results">
+        <h4>Kết quả thực thi:</h4>
+        <ul>
+            @foreach (var result in executionResults)
+            {
+                <li>@result</li>
+            }
+        </ul>
+    </div>
+
+    <div class="controls">
+        <button class="btn btn-primary" @onclick="StartTimer" disabled="@isTimerRunning">
+            <i class="fas fa-play"></i> Bắt đầu
+        </button>
+        <button class="btn btn-warning" @onclick="ResetTimer" disabled="@(!isTimerRunning && executionResults.Count == 0)">
+            <i class="fas fa-redo"></i> Reset
+        </button>
+    </div>
+</div>
+
+@code {
+    private Timer? timer;
+    private int countdown = 2;
+    private bool isTimerRunning = false;
+    private string statusMessage = "Chưa bắt đầu";
+    private string statusClass = "status-waiting";
+    private string icon = "⏱️";
+    private List<string> executionResults = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        // Khởi tạo timer với interval 1000ms (1 giây)
+        timer = new Timer(1000);
+        timer.Elapsed += OnTimerElapsed;
+        timer.AutoReset = true;
+    }
+
+    private void StartTimer()
+    {
+        if (timer != null && !isTimerRunning)
+        {
+            executionResults.Clear();
+            countdown = 2;
+            isTimerRunning = true;
+            statusMessage = "Đang đếm ngược...";
+            statusClass = "status-running";
+            icon = "⏰";
+            timer.Start();
+            StateHasChanged();
+        }
+    }
+
+    private void OnTimerElapsed(object? sender, ElapsedEventArgs e)
+    {
+        InvokeAsync(() =>
+        {
+            countdown--;
+            
+            if (countdown <= 0)
+            {
+                // Dừng timer và thực thi phương thức
+                timer?.Stop();
+                isTimerRunning = false;
+                ExecuteDelayedMethod();
+            }
+            else
+            {
+                statusMessage = $"Đang đếm ngược... {countdown}";
+            }
+            
+            StateHasChanged();
+        });
+    }
+
+    private void ExecuteDelayedMethod()
+    {
+        // Phương thức được tự động thực thi sau 2 giây
+        var result = $"Thực thi lúc: {DateTime.Now:HH:mm:ss}";
+        executionResults.Add(result);
+        
+        statusMessage = "Đã thực thi thành công!";
+        statusClass = "status-completed";
+        icon = "✅";
+        
+        // Có thể thêm các logic khác ở đây
+        Console.WriteLine($"Phương thức tự động được gọi: {result}");
+    }
+
+    private void ResetTimer()
+    {
+        timer?.Stop();
+        isTimerRunning = false;
+        countdown = 2;
+        statusMessage = "Chưa bắt đầu";
+        statusClass = "status-waiting";
+        icon = "⏱️";
+        executionResults.Clear();
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+}
+
+<style>
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .status-box {
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .status-waiting {
+        background-color: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeaa7;
+    }
+
+    .status-running {
+        background-color: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+    }
+
+    .status-completed {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .icon {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .countdown {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .countdown-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #6c5ce7, #a29bfe);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px auto;
+        box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    }
+
+    .countdown-text {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    .results {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #e9ecef;
+    }
+
+    .results h4 {
+        margin-top: 0;
+        color: #495057;
+    }
+
+    .results ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .results li {
+        padding: 8px 12px;
+        background-color: white;
+        margin-bottom: 8px;
+        border-radius: 5px;
+        border-left: 4px solid #6c5ce7;
+    }
+
+    .controls {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: linear-gradient(145deg, #6c5ce7, #a29bfe);
+        color: white;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+    }
+
+    .btn-warning {
+        background: linear-gradient(145deg, #fd9644, #fed330);
+        color: white;
+    }
+
+    .btn-warning:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(253, 150, 68, 0.4);
+    }
+
+    .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+</style>
